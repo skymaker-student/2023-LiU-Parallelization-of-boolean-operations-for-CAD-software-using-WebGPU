@@ -1,5 +1,14 @@
 # Parallelization of boolean operations for CAD software using WebGPU
 
+## Run
+
+Run the following commands in the project:
+
+```
+npm i
+npm run dev
+```
+
 ## Abstract
 
 This project is about finding ways to improve performance of a
@@ -15,14 +24,11 @@ to compete with a state-of-the-art line-sweep based algorithm called
 intersection is still faster than our implementations in most cases, we found that WebGPU can still 
 give significant performance boosts.
 
-## Run
 
-Run the following commands in the project:
+## Link to thesis
 
-```
-npm i
-npm run dev
-```
+*Not published yet*
+
 
 ## Authors
 
