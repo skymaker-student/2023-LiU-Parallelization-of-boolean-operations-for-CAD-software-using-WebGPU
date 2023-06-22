@@ -1,0 +1,100 @@
+.debug-matrix {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    height: 2em;
+    width: 15em;
+    background: #800;
+    overflow: hidden;
+}
+
+.debug-matrix:nth-of-type(2) {
+    bottom: 4em;
+}
+.debug-matrix:nth-of-type(3) {
+    bottom: 7em;
+}
+.debug-matrix:nth-of-type(4) {
+    bottom: 10em;
+}
+.debug-matrix:nth-of-type(5) {
+    bottom: 13em;
+}
+.debug-matrix:nth-of-type(6) {
+    bottom: 16em;
+}
+
+.debug-matrix::before {
+    content: attr(data-name);
+}
+
+.debug-matrix:hover::before,
+.debug-matrix.active::before {
+    visibility: collapse;
+    position: absolute;
+    top: 0;
+}
+
+.debug-matrix:hover,
+.debug-matrix.active {
+    position: absolute;
+    inset: 1em;
+    background: #444;
+    z-index: 1000;
+    height: unset;
+    width: unset;
+
+    display: grid;
+    grid-template-columns: max-content repeat(var(--cols), 1fr) max-content;
+    grid-template-rows: max-content repeat(var(--rows), 1fr) max-content;
+    padding: 0.5em;
+    gap: 4px;
+    overflow: scroll;
+}
+
+.debug-matrix * {
+    visibility: hidden;
+    width: 0;
+    min-width: 0;
+    font-size: 0;
+}
+
+.debug-matrix:hover *,
+.debug-matrix.active * {
+    visibility: visible;
+    width: unset;
+    min-width: unset;
+    font-size: unset;
+}
+
+.debug-matrix > .close {
+    background: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    z-index: 100;
+}
+
+.debug-matrix :is(.header, .footer, .left, .right) {
+    font-weight: bold;
+    place-self: center;
+    text-align: center;
+    min-width: 1em;
+    min-height: 1em;
+    line-height: 1;
+    user-select: none;
+}
+
+.debug-matrix .cell {
+    place-items: center;
+    display: grid;
+    place-content: center;
+    position: relative;
+    background: #333;
+}
+
+.debug-matrix .cell > * {
+    z-index: 1;
+}
