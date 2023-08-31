@@ -27,7 +27,7 @@ give significant performance boosts.
 
 ## Link to thesis
 
-*Not published yet*
+[*Parallelization of boolean operations for CAD Software using WebGPU*](https://liu.diva-portal.org/smash/record.jsf?pid=diva2%3A1792421&dswid=-3359)
 
 
 ## Authors
